@@ -122,3 +122,40 @@ npm run dev
 | `npm run build` | Type-check + production build |
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
+
+## Deliverable
+
+This repo contains:
+
+- **React source code** — fully typed TypeScript, component-based architecture.
+- **JSON data** — product data for cameras, sensors, and accessories in `src/data/`.
+- **Run instructions** — clone the repo, then:
+
+```bash
+git clone <repo-url>
+cd app
+npm install
+npm run dev
+```
+
+The app builds and runs from a clean clone with no additional setup.
+
+## Decisions & Tradeoffs
+
+**What was built:**
+- Accordion-based product configurator with 4 steps (cameras, plan, sensors, accessories).
+- Per-category Zustand stores with shared pure service functions.
+- Responsive two-column checkout review with live price calculations.
+- Logic/UI separation — components are pure layout, services handle all data.
+
+**Tradeoffs:**
+- Product data is static (TypeScript files, not a backend API). A backend was not implemented.
+- Auto-added sensor logic was removed during the final refactor in favor of simpler per-category stores. If cross-category bundling is needed later, the service layer can be extended.
+- Variant selection (White/Black) is local UI state only — it does not affect the cart or pricing.
+- The "Plan" and "Protection" accordion steps show placeholder content, not full product grids.
+
+**Not finished:**
+- No backend or API integration.
+- No persistence (cart resets on refresh).
+- No authentication or user accounts.
+- The "Save my system for later" and "Checkout" buttons are visual only.
