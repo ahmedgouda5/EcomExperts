@@ -1,4 +1,4 @@
-import { SecuritySystemData } from './types';
+import type { SecuritySystemData } from './types';
 
 export const mockData: SecuritySystemData = {
   cameras: [
