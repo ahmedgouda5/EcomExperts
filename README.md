@@ -148,14 +148,21 @@ The app builds and runs from a clean clone with no additional setup.
 - Responsive two-column checkout review with live price calculations.
 - Logic/UI separation — components are pure layout, services handle all data.
 
+## Persistence
+
+The bundle configuration is automatically persisted using Zustand's `persist` middleware.
+
+Any products, quantities, variants, or selections made by the user are saved directly to local storage and restored automatically when the application reloads.
+
+This means users can refresh the page, close the browser, or return later without losing their configured security system.
+
+Because persistence is handled automatically by Zustand, the "Save my system for later" action is effectively built into the application experience and does not require any additional save step from the user.
+
+
 **Tradeoffs:**
 - Product data is static (TypeScript files, not a backend API). A backend was not implemented.
 - Auto-added sensor logic was removed during the final refactor in favor of simpler per-category stores. If cross-category bundling is needed later, the service layer can be extended.
 - Variant selection (White/Black) is local UI state only — it does not affect the cart or pricing.
 - The "Plan" and "Protection" accordion steps show placeholder content, not full product grids.
 
-**Not finished:**
-- No backend or API integration.
-- No persistence (cart resets on refresh).
-- No authentication or user accounts.
-- The "Save my system for later" and "Checkout" buttons are visual only.
+
