@@ -154,8 +154,4 @@ The app builds and runs from a clean clone with no additional setup.
 - Variant selection (White/Black) is local UI state only — it does not affect the cart or pricing.
 - The "Plan" and "Protection" accordion steps show placeholder content, not full product grids.
 
-**Not finished:**
-- No backend or API integration.
-- No persistence (cart resets on refresh).
-- No authentication or user accounts.
-- The "Save my system for later" and "Checkout" buttons are visual only.
+
